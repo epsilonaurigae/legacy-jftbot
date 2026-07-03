@@ -1,0 +1,8 @@
+# This whole thing is a subsystem that executes commands inserted into ~/tmp/workqueue.tmp
+# Most functions are a "macro" for a "!" command and do not require this.
+# But shell jobs to /say something in the room in response to a shell or batch job require it.
+#
+# None of the other subsystems work without running this
+# needs to be loaded in ~/.bitchxrc as something like 
+#
+# timer -rep -1 30 /load ~/timers/processqueue.bx 
