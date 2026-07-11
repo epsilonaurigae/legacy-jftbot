@@ -1,10 +1,10 @@
 This is What Survived.
 
-# scripts are in the process of being vetted to ensure no production credentials exist in them
-# we didnt knowingly keep logs of the room but I'm also making sure no one's personal details
-# or intimate sharing are included in the wreckage.
-# as of this writing 7/11/26 I have only gotten around to posting the timer subsystem.
-# its crude but its what i had to work with.
+ scripts are in the process of being vetted to ensure no production credentials exist in them
+ we didnt knowingly keep logs of the room but I'm also making sure no one's personal details
+ or intimate sharing are included in the wreckage.
+ as of this writing 7/11/26 I have only gotten around to posting the timer subsystem.
+ its crude but its what i had to work with.
 
 Historical Note
 
