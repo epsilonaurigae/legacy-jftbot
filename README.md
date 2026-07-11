@@ -1,3 +1,5 @@
+Historical Note
+The original chair bot evolved over many years, and much of its source code has been lost. The following feature list was reconstructed from surviving IRC logs captured during testing in August 2023. Some details are confirmed directly from bot output, while others are inferred from command sequences and operator activity.
 
 Confirmed user-facing commands
 Command
