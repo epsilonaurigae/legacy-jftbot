@@ -1,4 +1,13 @@
+This is What Survived.
+
+# scripts are in the process of being vetted to ensure no production credentials exist in them
+# we didnt knowingly keep logs of the room but I'm also making sure no one's personal details
+# or intimate sharing are included in the wreckage.
+# as of this writing 7/11/26 I have only gotten around to posting the timer subsystem.
+# its crude but its what i had to work with.
+
 Historical Note
+
 The original chair bot evolved over many years, and much of its source code has been lost. The following feature list was reconstructed from surviving IRC logs captured during testing in August 2023. Some details are confirmed directly from bot output, while others are inferred from command sequences and operator activity.
 
 Confirmed user-facing commands
@@ -257,3 +266,15 @@ The old bot seems to have had five broad subsystems:
 	5	Join/security automation Welcome messages, IP parsing, scanning, and meeting-in-progress detection.
 
 For an “obsolete version,” it was already doing quite a lot. The notable limitation is that its state was fragile: repeated commands, restarts, missing shell files, malformed mode commands, and timers could put it out of sequence. But conceptually, most of the mature chair-robot model was already there.
+
+## Preservation
+
+This repository is not an actively maintained IRC bot.
+
+It is a preservation of the surviving source code for the original
+NA Chat chair robot, along with documentation reconstructed from
+surviving logs.
+
+Much of the project's history has been lost over time. Where possible,
+features have been documented from observed behavior rather than source
+code alone.
