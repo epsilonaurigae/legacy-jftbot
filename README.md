@@ -4,7 +4,8 @@ This is What Survived.
  we didnt knowingly keep logs of the room but I'm also making sure no one's personal details
  or intimate sharing are included in the wreckage.
  as of this writing 7/11/26 I have only gotten around to posting the timer subsystem.
- its crude but its what i had to work with.
+ its crude but its what i had to work with. perhaps this is just fun history or a point of reference for
+ the origins of the PTCruiser bot (formerly known as JFT_BOT), and/or where things are going with the new bot.
 
 Historical Note
 
