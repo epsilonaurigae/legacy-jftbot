@@ -1,0 +1,523 @@
+@ ::MANUALTOPIC = 0
+@ ISITREADINGTIME = 1
+@ ISITCLOSETIME = 1
+@ ISITTIME = 1
+on -public "% % !mute" {
+        if ( [$ishalfop($0)] ) {
+                /say "The room is now moderated. You will not be able to type into the channel unless it is your turn to share."
+                /mode $1 +m
+
+}
+	if ( [$ischanop($0)] ) {
+                /mode $1 +m
+
+}
+
+}
+
+
+on -public "% % !changenick*" {
+        if ( [$ishalfop($0)] ) {
+                /msg operserv svsnick $3 $4 
+
+}
+        if ( [$ischanop($0)] ) {
+                /msg operserv svsnick $3 $4
+
+}
+
+}
+
+
+on -public "% % !bantmo*" {
+        if ( [$ishalfop($0)] ) {
+                /mode $1 +b *!*@208.54.*
+                /mode $1 +b *!*@172.56.*
+                /mode $1 +b *!*@172.58.*
+                /mode $1 +b *!*@172.32.*
+                /mode $1 +b *!*@100.128.*
+                /mode $1 +b *!*@72.250.*
+                /mode $1 +b *!*@66.94.*
+                /timer 28800 /mode $1 -b *!*@208.54.*
+                /timer 28800 /mode $1 -b *!*@172.56.*
+                /timer 28800 /mode $1 -b *!*@172.58.*
+                /timer 28800 /mode $1 -b *!*@172.32.*
+                /timer 28800 /mode $1 -b *!*@100.128.*
+                /timer 28800 /mode $1 -b *!*@72.250.*
+                /timer 28800 /mode $1 -b *!*@66.94.*		
+
+
+}
+        if ( [$ischanop($0)] ) {
+                /mode $1 +b *!*@208.54.*
+                /mode $1 +b *!*@172.56.*
+                /mode $1 +b *!*@172.58.*
+                /mode $1 +b *!*@172.32.*
+                /mode $1 +b *!*@100.128.*
+                /mode $1 +b *!*@72.250.*
+                /mode $1 +b *!*@66.94.*
+                /timer 28800 /mode $1 -b *!*@208.54.*
+                /timer 28800 /mode $1 -b *!*@172.56.*
+                /timer 28800 /mode $1 -b *!*@172.58.*
+                /timer 28800 /mode $1 -b *!*@172.32.*
+                /timer 28800 /mode $1 -b *!*@100.128.*
+                /timer 28800 /mode $1 -b *!*@72.250.*
+                /timer 28800 /mode $1 -b *!*@66.94.*
+
+}
+
+}
+
+on -public "% % !shield*" {
+        if ( [$ishalfop($0)] ) {
+	        /say alright , I will be a little more aggressive with security for awhile.
+                /exec /bin/cp /home/nnsbot/bopm/scan.on /home/nnsbot/bopm/scan.sh
+
+}
+        if ( [$ischanop($0)] ) {
+	        /say alright , I will be a little more aggressive with security for awhile.
+                /exec /bin/cp /home/nnsbot/bopm/scan.on /home/nnsbot/bopm/scan.sh
+
+}
+
+}
+
+on -public "% % !banvzw*" {
+        if ( [$ishalfop($0)] ) {
+		/say Setting a 12 hour restriction on Verizon Wireless. This restriction does not apply to registered nicknames who log in with a password.
+		/quote gline %*@*.myvzw.com 12h Temporary 12 hour restriction on verizon wireless due to subscriber(s) repeatedly engaging in antisocial conduct. This restriction does not apply to registered nicknames who log in with a password. Sorry for the inconvenience
+
+}
+        if ( [$ischanop($0)] ) {
+                /say Setting a 12 hour restriction on Verizon Wireless. This restriction does not apply to registered nicknames who log in with a password.
+                /quote gline %*@*.myvzw.com 12h Temporary 12 hour restriction on verizon wireless due to subscriber(s) repeatedly engaging in antisocial conduct. This restriction does not apply to registered nicknames who log in with a password. Sorry for the inconvenience
+
+
+}
+
+}
+
+
+
+
+
+on -public "% % !unbantmo*" {
+        if ( [$ishalfop($0)] ) {
+                /mode $1 -b *!*@208.54.*
+                /mode $1 -b *!*@172.56.*
+                /mode $1 -b *!*@172.58.*
+                /mode $1 -b *!*@172.32.*
+                /mode $1 -b *!*@100.128.*
+                /mode $1 -b *!*@72.250.*
+                /mode $1 -b *!*@66.94.*
+
+
+}
+        if ( [$ischanop($0)] ) {
+                /mode $1 -b *!*@208.54.*
+                /mode $1 -b *!*@172.56.*
+                /mode $1 -b *!*@172.58.*
+                /mode $1 -b *!*@172.32.*
+                /mode $1 -b *!*@100.128.*
+                /mode $1 -b *!*@72.250.*
+                /mode $1 -b *!*@66.94.*
+
+}
+
+}
+
+on -public "% % !mv" {
+        if ( [$ishalfop($0)] ) {
+		/mv
+
+}
+
+
+}
+
+
+on -public "% % !fixtopic" {
+        if ( [$ishalfop($0)] ) {
+		/topic #nachat Welcome to the free(ish) speech friendly NACHATROOM.ORG. This is a chatroom where recovering addicts help each other 24/7. Our isolation keeps us sick, so please join us here for chat. We have meetings every night at 9PM EST. We would love to have you. People come here in all stages of recovery, so any Experience, Strength and Hope you share will help.
+
+}
+
+
+}
+
+on -public "% % !xxxlounge*" {
+        if ( [$ishalfop($0)] ) {
+	 	/say okay, $0 . I will let $3 know that next time I see them.
+                /msg faith .tell $3 Your account is confirmed by $0 , you may check the box that says I Have a Password using Kiwi or TheLounge now.
+		/msg faith .tell $3 This is a brand new account management system. This is why everyone has to re register. If you were previously a meeting chair or moderator you will need to be re-added manually by hand. Rob may not necessarily be aware of who the chairs and ops are anymore. We didnt fire or demote anyone. The system just has no idea who you are right now.
+		/msg faith .tell $3 If you want to use the mobile app/progressive web app at https://lounge.neveraloneclub.org , use your nickname and password. The very first time you log in you will be presented with a configuration page. 
+		/msg faith .tell $3 If you go back to https://register.neveraloneclub.org there is a screen shot for you which shows you where to put your nickname and password. You will only see this one time, or if you type /QUIT to sign out of the Mobile App
+		/msg hostserv set $3 $3@$3.homegroup.neveraloneclub.org
+		/say PSA: This message means that $0 has confirmed the registration for $3 , please see https://register.nachatroom.org for information about registering or using different types of software in our chatroom.
+
+}
+
+
+}
+
+
+on -public "% % !unmute" {
+        if ( [$ishalfop($0)] ) {
+		/load ~/chairmeeting/massvoice.bx
+                /say "The room is no longer moderated. You may now type into the channel."
+		/load ~/tmp/topics.bx 
+                /mode $1 -m
+
+}
+	if ( [$ischanop($0)] ) {
+                /load ~/chairmeeting/massvoice.bx
+                /say "The room is no longer moderated. You may now type into the channel."
+                /load ~/tmp/topics.bx
+                /mode $1 -m
+
+}
+
+}
+
+
+on -public "% % !beginmeeting*" {
+if ( ISITTIME == 1 ) {
+        /notice $0 Thank you for your interest in chairing a meeting. It is not time for a meeting, or someone already beat you to it. You may use this command any time after 8:50pm Eastern/New York time and we can add other meetings at any time.
+  } else {
+
+
+        @ ISITTIME = 1
+		/exec cp ~/welcome/meeting-on.sh ~/welcome/welcome.sh
+		/exec cp ~/welcome/voice-on.bx ~/welcome/voice.bx
+		/exec echo "" > ~/tmp/workqueue.tmp
+		@ ::JFTTIMER = 0
+		@ ::MANUALTOPIC = 0
+		@ ::STEPTIMER = 0
+		@ ::TEXTTIMER = 0
+		@ ::SHOTTIMER = 1
+		/set log on
+		/timer -delete all
+		/mode #nachat -s
+		/mode #nachat +H 20:1440
+		/load ~/chairmeeting/done.bx
+		/topic #nachat Meeting is in progress
+		/exec echo "" > ~/tmp/workqueue.tmp
+		/timer -rep -1 10 /load ~/timers/processqueue.bx
+		/timer -rep -1 300 /sc
+		/mode $1 -m
+		/mdv
+		/mode #nachat +v $0
+		/exec ~/beginmeeting/beginmeeting.sh
+		
+		/say Beginning the meeting. Thank you for being of service today, $0 please introduce yourself as an addict by your first name. 
+		/say We will open the meeting with the serenity prayer in 30 seconds."
+		timer 30 {
+		/say Welcome to the online Narcotics Anonymous Meeting @ nachatroom.eth.limo. The primary purpose of this meeting is to carry the message to the addict who still suffers. All are welcome, especially newcomers.
+		/say We do not maintain any kind of membership list, if you're here you are a part of this thing. 
+		/say Please keep the focus on RECOVERY and welcoming and greeting the addict who is suffering without a solution. We ask that you please do not share personal contact OR social media info in the channel.
+
+		/say Please join me in the Serenity Prayer:
+		/mode $1 +m
+}
+		timer 45 {
+		/say "God. Grant me the serenity to accept the things I cannot change. The courage to change the things I can. And the wisdom to know the difference."
+		/mode $1 -m
+}
+
+		timer 55 {
+		/say I have shared that I am an addict, are there any other addicts present?
+}
+		timer 100 {
+		/say The most important person at any meeting is the newcomer. Would those in their first 30 days of clean time/sobriety (or just coming back) please introduce yourselves by your first name only.
+		/say This is not done to embarass anyone, but so that we may get to know you better.
+}
+		timer 150 {
+		/say For those who are new or coming back, please don't hesitate to contact members who have been around for awhile, for they will be delighted to share their experience , strength, and hope with you.
+		/say If you are grateful to be clean just for today -- one day at a time -- type "!" 
+}
+		timer 210 {
+		/say The format of this meeting is:
+		/say Selected readings
+		/say Celebration of Recovery Milestones
+		/say Sharing
+	        /say Closing
+		/sleep 5
+
+		/say Before we start our readings, does anyone have milestones to celebrate?
+		/sleep 15
+		@ ISITREADINGTIME = 0
+		/say "Chairperson: Please type !readings to begin the readings after everyone has been greeted and shared milestones"
+		/mode $1 -m
+
+	}	
+
+	        timer 3300 {
+		/say Timer: Please wrap up sharing, we will move to Burning Desire in five minute.
+}
+
+		timer 3600 {
+		@ ISITCLOSETIME = 0 
+
+
+		/say We always save a few minutes towards the end for newcomers in their first 30 days who did not get a chance to share, or for someone who has what we call a Burning Desire.
+                /say A Burning Desire is when you feel you may go out and use, or harm yourself or someone else if you don’t get an opportunity to speak.
+                /say We invite you to step up and share about it at this time, because if we talk about it we may be able to save our lives. We have a timer set for 90 seconds if you have something you need to get off your chest briefly before we close.
+		/sleep 60
+		/say Please make sure not to interrupt anyone sharing a burning desire. 
+		/sleep 5 Please confirm everyone who wants to share, has - or if the spirit has left the room and nobody is talking , you can end the meeting with !close at any time.
+
+
+}
+
+}
+ }
+
+on -public "% % !zxhxhxhxhtimer" {
+        if ( [$ishalfop($0)] ) {
+                /load ~/chairmeeting/done.bx
+		/say For meditation/reading topics, we give the group two minutes of quiet time to go over our readings -- or today's topic.
+		/say Or just just take ONE DEEP BREATH with me now - Hold it in, let it go.
+		/say We'll be right back!
+		/say **** TIMER SET ***
+
+	timer 120 {
+		/notice $0 Wakey wakey! The timer has ended.
+		/say *** TIMER ENDED ***
+		/mode #nachat -m
+                /say Thank you. The meeting is now open for general participation.  We ask that you limit your share to no more 7 minutes so that we can hear from as many of you as possible.
+                /say As in most NA groups, we don’t cross-talk, engage in dialogue or debate during the meeting, or interrupt each other.
+                /say When sharing, we need to be careful in describing drug effects.  Please honor the recovery of others and avoid glorifying drugs, drug use, and/or drug-driven sex.
+                /say We will share until approximately 5-10 minutes remain.
+                /say If you would like to share, please type ! and introduce yourself when asked.
+}
+
+
+
+}
+
+}
+
+
+
+on -public "% % !zizzzzzzintro*" {
+        if ( [$ishalfop($0)] ) {
+		/load ~/chairmeeting/done.bx
+                /mode $1 +v $3
+                /say Thank you $3, the floor is yours. Please introduce yourself to the group. 
+                /say $3, when you are finished sharing please let us know by typing !done 
+
+
+}
+
+}
+
+
+on -public "% % !tzzzzzzzzgban*" {
+        if ( [$ishalfop($0)] ) {
+		/exec ~/telegram/ban.sh $3
+
+
+}
+
+}
+
+on -public "% % !zzzzzburning*" {
+        if ( [$ishalfop($0)] ) {
+                /mode $1 -m
+		/exec /bin/echo "" >~/tmp/topics.bx
+                /say We always save a few minutes towards the end for newcomers in their first 30 days who did not get a chance to share, or for someone who has what we call a Burning Desire.
+		/say A Burning Desire is when you feel you may go out and use, or harm yourself or someone else if you don’t get an opportunity to speak.
+		/say We invite you to step up and share about it at this time, because if we talk about it we may be able to save our lives. 
+
+		/say NEW STEP: Chairperson, type !announcements BEFORE you !close ... whenever you are ready to do announcements and clean time milestones.
+
+}
+
+}
+
+
+on -public "% % !zzzzzzanno*" {
+        if ( [$ishalfop($0)] ) {
+                /mode $1 -m
+                /say CLUB ANNOUNCEMENTS:
+                /say If you would like to volunteer to be a chairperson, type !schedule and look for OPEN days. Please review the instructions on neveraloneclub.org , and register your nickname.
+                /say Are there any NA , club, or other recovery announcements?
+                /say Chairperson, type !milestones to continue
+
+}
+
+}
+
+
+
+
+
+on -public "% % !zzzzztopics" {
+		@ ::MANUALTOPIC = 1
+                /mode $1 -m
+		/say Selecting a random topic...
+		/exec ~/chairmeeting/topics.sh
+		/sleep 1
+		/load ~/tmp/topics.bx
+
+}
+
+}
+
+on -public "% % !close" {
+if ( ISITCLOSETIME == 1 ) {
+        /notice $0 It is not time to close the meeting, or someone already beat you to it. You may use this command any time after 9:50pm Eastern/New York time and we can add other meetings at any time.
+  } else {
+
+        @ ISITCLOSETIME = 1
+
+
+
+		/say If you did not get a chance to share and still need to talk, please stick around for open chat.
+		/say 
+		/mode #nachat -l
+		/exec cp ~/welcome/voice-off.bx ~/welcome/voice.bx
+		/exec cp ~/welcome/meeting-off.sh ~/welcome/welcome.sh
+		/exec /bin/echo "" >~/tmp/topics.bx
+
+timer 20 {
+		/mode $1 +m
+
+		/say *** WE DO RECOVER: https://na.org/admin/include/spaw2/uploads/pdf/litfiles/us_english/misc/We%20Do%20Recover.pdf
+		
+
+/say When at the end of the road we find that we can no longer function as a human being, either with or without drugs, we all face the same dilemma. 
+/say What is there left to do? There seems to be this alternative: either go on as best we can to the bitter ends — jails, institutions or death — or find a new way to live. 
+/say In years gone by, very few addicts ever had this last choice. Those who are addicted today are more fortunate. 
+/say For the first time in man’s entire history, a simple way has been proving itself in the lives of many addicts. It is available to us all. This is a simple spiritual — not religious — program, known as Narcotics Anonymous
+
+/say **** THANK YOU, THE MEETING HAS ENDED.
+		/mode #nachat -m
+}
+
+		timer 35 {
+		/mode #nachat -m
+
+                /say That's all the time we have. Thank you for participating -- If you did not get a chance to share and need to, please talk to someone after the meeting.
+
+}
+				timer 90 { 
+		/mv
+		/topic #nachat Welcome to the free(ish) speech friendly NACHATROOM.ORG. This is a chatroom where recovering addicts help each other 24/7. Our isolation keeps us sick, so please join us here for chat. We have meetings every night at 9PM EST. We would love to have you. People come here in all stages of recovery, so any Experience, Strength and Hope you share will help.
+
+
+		/timer -delete all
+		/timer -rep -1 10 /load ~/timers/processqueue.bx
+
+@ ::HUGTIMER = 0
+@ ::TELLTIMER = 0
+@ ::WEATHERTIMER = 0
+@ ::SEENTIMER = 0
+@ ::LOLTIMER = 0
+@ ::SESSIONTIMER = 0
+@ ::SHOTTIMER = 1
+@ ::BEFTIMER = 1
+@ ::MISFIRETIMER = 1
+@ ::CATCHTIMER = 0
+@ ::TOSSTIMER = 0
+@ ::ZEPHYRSNOTFUNNYTIMER = 0
+                }
+}
+
+}
+
+on -public "% % !zzzzzzzstart" {
+        if ( [$ishalfop($0)] ) {
+                /mode $1 -m
+		if ( MANUALTOPIC == 0 ) {
+	        /topic $1 Meeting is in Progress - The Floor is now open for participation and sharing
+}
+		/say The meeting is now open for general participation.  We suggest that you have 24 hours of clean time to share and ask that you limit your share to no more 7 minutes so that we can hear from as many of you as possible.  
+		/say As in most NA groups, we don’t cross-talk, engage in dialogue or debate during the meeting, or interrupt each other.
+		/say When sharing, we need to be careful in describing drug effects.  Please honor the recovery of others and avoid glorifying drugs, drug use, and/or drug-driven sex.
+		/say We will share until approximately 5-10 minutes remain.
+                /say If you would like to share, please type ! and introduce yourself when asked.
+                timer 10 {
+                /say Who would like to share first?
+}
+		timer 12 {
+}
+
+}
+
+}
+
+on -public "% % !reading*" {
+
+if ( ISITREADINGTIME == 1 ) {
+        /notice $0 Please use !beginmeeting before using !readings 
+  } else {
+
+        @ ISITREADINGTIME = 1
+        @ ISITTIME = 1
+
+/say Playing Readings: This takes approximately 3 minutes. The room will be muted during readings.
+
+/mode $1 +m
+
+/say *** Who Is an Addict (NA)? - https://na.org/admin/include/spaw2/uploads/pdf/litfiles/us_english/misc/Who%20Is%20an%20Addict.pdf
+
+/say Who Is an Addict?
+/say Most of us do not have to think twice about this question. We know! 
+/say Our whole life and thinking was centered in drugs in one form or another—the getting and using and finding ways and means to get more. 
+/say We lived to use and used to live.  
+/say Very simply, an addict is a man or woman whose life is controlled by drugs. We are people in the grip of a continuing and progressive illness whose ends are alwaysthe same:  
+/say jails, institutions, and death
+
+timer 30 {
+
+/say *** Next Reading: What is the Narcotics Anonymous Program? (NA Basic Text, page 9)
+/say https://www.na.org/admin/include/spaw2/uploads/pdf/litfiles/us_english/misc/What%20Is%20the%20NA%20Program.pdf
+
+/say NA is a nonprofit fellowship or society of men and women for whom drugs had become a major problem. We are recovering addicts who meet regularly to help each other stay clean. 
+/say This is a program of complete abstinence from all drugs. There is only one requirement for membership, the desire to stop using. We suggest that you keep an open mind and give yourself a break. 
+/say Our program is a set of principles written so simply that we can follow them in our daily lives. The most important thing about them is that they work.
+/say There are no strings attached to NA. We are not affiliated with any other organizations. 
+/say We have no initiation fees or dues, no pledges to sign, no promises to make to anyone. We are not connected with any political, religious, or law enforcement groups, and are under no surveillance at anytime. 
+/say Anyone may join us regardless of age, race, sexual identity, creed, religion, or lack of religion.
+/say We are not interested in what or how much you used or who your connections were, what you have done in the past, how much or how little you have, but only in what you want to do about your problem and how we can help. 
+/say The newcomer is the most important person at any meeting, because we canonly keep what we have by giving it away. 
+/say We have learned from our group experience that those who keep coming to ourmeetings regularly stay clean.
+
+}
+
+timer 120 {
+
+/say The program of Narcotics Anonymous is found in our "basic text." Please ask another member or a trusted servant how to get a copy or find one online.
+/say If you are not familiar with the following readings please click on any of these to learn more about the NA Program:
+/say Please take some time to bookmark and read these or click on "How it Works" and the "12 Traditions" from NACHATROOM.ORG
+/say How it Works - The 12 Steps of NA: https://na.org/admin/include/spaw2/uploads/pdf/litfiles/us_english/misc/How%20it%20Works.pdf
+/say The 12 Traditions of NA: https://na.org/admin/include/spaw2/uploads/pdf/litfiles/us_english/misc/Twelve%20Traditions.pdf
+
+
+}
+
+timer 130 {
+/mode $1 -m
+
+                /say The meeting is now open for general participation.  We suggest that you have 24 hours of clean time to share and ask that you limit your share to no more 7 minutes so that we can hear from as many of you as possible.
+                /say As in most NA groups, we don’t cross-talk, engage in dialogue or debate during the meeting, or interrupt each other.
+                /say When sharing, we need to be careful in describing drug effects.  Please honor the recovery of others and avoid glorifying drugs, drug use, and/or drug-driven sex.
+                /say We will share until approximately 5-10 minutes remain.
+                /say If you would like to share, please type ! and introduce yourself when asked.
+		/say things are a little different here - please do not interrupt someone's share.
+		/say be sure to let us know when you are DONE, you can just say "done."
+                timer 10 {
+		/say Selecting a random topic...
+		/exec -out ~/chairmeeting/topics.sh
+
+		/say Thank you for opening the meeting $0 . 
+		/say Anyone attending can welcome those joining. Please help everyone have a smooth meeting : ask the room who would like share next during long pauses between shares- and (if necessary) remind people to please not interrupt one another, give advice, or "feedback" about their shares.
+                /say Who would like to share first?
+}
+
+}
+
+}
+
+}
