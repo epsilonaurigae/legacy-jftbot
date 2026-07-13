@@ -283,6 +283,10 @@ It is a preservation of the surviving source code for the original
 NA Chat chair robot, along with documentation reconstructed from
 surviving logs.
 
+Some scripts will reference broken outside ".bx" or ".sh" scripts and functions.
+I have most of them but am slow walking the check-in.
+
+
 Much of the project's history has been lost over time. Where possible,
 features have been documented from observed behavior rather than source
 code alone.
