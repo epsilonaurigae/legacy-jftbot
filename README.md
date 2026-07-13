@@ -1,3 +1,10 @@
+The "new" jftbot is just a macro script for grupochat.
+It needs some work. 
+See: https://github.com/epsilonaurigae/grupochat-jobs/blob/main/macros.sh
+That will be updated and fixed over time.
+What youre reading now, will not be updated.
+
+
 This is What Survived.
 
  scripts are in the process of being vetted to ensure no production credentials exist in them
